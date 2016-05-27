@@ -59,9 +59,10 @@ Rails.application.routes.draw do
   #     # Directs /admin/products/* to Admin::ProductsController
   #     # (app/controllers/admin/products_controller.rb)
        resources :products
-       resources :coctailes
+       resources :coctailes do
+         resources :ingredients
+       end
        resources :ajax_products
        resources :ajax_coctailes
-       put 'show_hide' => "ajax_coctailes#show_hide"
      end
 end

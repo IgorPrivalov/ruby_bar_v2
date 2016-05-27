@@ -18,14 +18,15 @@
     </div>
     <div class="panel panel-info col-sm-3">
       <div class="panel-heading">
-        <h1 class="panel-title">Ingredients</h1>
+        <h1 class="panel-title">Ingredients <%= link_to 'Add ingredient', new_admin_coctaile_ingredient_path(@coctaile), class: "btn btn-default" %></h1>
       </div>
       <div class="panel-body">
         <ul>
           <% @coctaile.ingredients.each do |ingredient| %>
-            <li>
-              <%= image_tag(ingredient.product.image_url, size: '50') if ingredient.product.image? %>
-              <%= "#{ingredient.product.name} #{ingredient.value}" %>
+            <li class="row">
+              <%= image_tag(ingredient.product.image_url, size: '50', class: "col-sm-3") if ingredient.product.image? %>
+              <p class="col-sm-5"><%= "#{ingredient.product.name} #{ingredient.value}" %></p>
+              <%= link_to 'Edit', edit_admin_coctaile_ingredient_path(@coctaile, ingredient), class: "btn btn-default col-sm-2" %>
             </li>
           <% end %>
         </ul>

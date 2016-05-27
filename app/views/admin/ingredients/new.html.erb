@@ -1,0 +1,3 @@
+<%= form_for @ingredient, url: admin_coctaile_ingredients_path(@ingredient.coctaile) do |f| %>
+    <%= render partial: 'form', locals:{f: f} %>
+<% end %>
