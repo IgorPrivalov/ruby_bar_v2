@@ -1,0 +1,8 @@
+<div id="<%= coctaile.id %>" data-id="<%= coctaile.id %>">
+  <% if mode == :edit %>
+      <%= render partial: 'row', locals: {coctaile: coctaile, mode: :edit} %>
+  <% else %>
+      <%= render partial: 'row', locals: {coctaile: coctaile, mode: :show} %>
+  <% end %>
+  <hr>
+</div>
